@@ -1,2 +1,2 @@
 # Lesen
-A library web app
+Book store web app
