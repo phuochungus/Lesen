@@ -42,7 +42,7 @@ public class Book extends SoftDeletable {
     private String description;
 
     @OneToMany(mappedBy = "book")
-    private List<BookInstance> bookInstances = new ArrayList<>();
+    private List<BookInstance> book_instances = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "publisher_id")
@@ -88,12 +88,12 @@ public class Book extends SoftDeletable {
         this.description = description;
     }
 
-    public List<BookInstance> getBookInstances() {
-        return bookInstances;
+    public List<BookInstance> getBook_instances() {
+        return book_instances;
     }
 
-    public void setBookInstances(List<BookInstance> bookInstances) {
-        this.bookInstances = bookInstances;
+    public void setBook_instances(List<BookInstance> bookInstances) {
+        this.book_instances = bookInstances;
     }
 
     public Publisher getPublisher() {
