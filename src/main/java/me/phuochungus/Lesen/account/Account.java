@@ -1,6 +1,10 @@
 package me.phuochungus.Lesen.account;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 import me.phuochungus.Lesen.admin.Admin;
 import me.phuochungus.Lesen.user.User;
 

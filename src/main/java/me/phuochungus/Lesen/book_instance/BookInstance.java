@@ -1,6 +1,11 @@
 package me.phuochungus.Lesen.book_instance;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import me.phuochungus.Lesen.book.Book;
 import me.phuochungus.Lesen.user.User;
 

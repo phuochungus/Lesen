@@ -1,8 +1,12 @@
 package me.phuochungus.Lesen.base;
 
-import jakarta.persistence.*;
-
 import java.util.Date;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
+import jakarta.persistence.Embedded;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 
 @Embeddable
 public class Profile {
@@ -81,5 +85,12 @@ public class Profile {
 
     public void setAvatar_url(String avatar_url) {
         this.avatar_url = avatar_url;
+    }
+
+    @Override
+    public String toString() {
+        return "Profile [name=" + name + ", gender=" + gender + ", address=" + address + ", date_of_birth="
+                + date_of_birth + ", phone_number=" + phone_number + ", id_number=" + id_number + ", avatar_url="
+                + avatar_url + "]";
     }
 }
