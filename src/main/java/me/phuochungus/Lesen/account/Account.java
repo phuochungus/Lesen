@@ -13,6 +13,12 @@ public class Account {
     @Id
     private long id;
 
+    @Override
+    public String toString() {
+        return "Account [id=" + id + ", email=" + email + ", password=" + password + ", admin=" + admin + ", user="
+                + user + "]";
+    }
+
     @Column(unique = true, nullable = false)
     private String email;
 
