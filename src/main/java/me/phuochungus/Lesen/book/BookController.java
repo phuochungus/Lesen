@@ -1,7 +1,6 @@
 package me.phuochungus.Lesen.book;
 
 import jakarta.validation.Valid;
-import me.phuochungus.Lesen.LesenApplication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,7 +22,11 @@ public class BookController {
 
     @PostMapping()
     public Book createBook(@Valid @RequestBody Book book) {
-        LesenApplication.logger.info("Book: " + book);
         return bookService.createBook(book);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteBook(@PathVariable Long id) {
+        bookService.deleteBook(id);
     }
 }

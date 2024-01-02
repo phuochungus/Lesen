@@ -2,8 +2,9 @@ package me.phuochungus.Lesen.book;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import me.phuochungus.Lesen.helper.SoftDeletable;
+import me.phuochungus.Lesen.base_class.SoftDeletable;
+import me.phuochungus.Lesen.book_instance.BookInstance;
+import me.phuochungus.Lesen.publisher.Publisher;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,23 +15,28 @@ public class Book extends SoftDeletable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-
     @Column(unique = true)
-    @NotBlank(message = "International Standard Book Number is mandatory")
-    private String international_standard_book_number;
+    @NotBlank(message = "isbn is mandatory")
+    private String isbn;
 
     @ElementCollection(targetClass = String.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "book_image_urls", joinColumns = @JoinColumn(name = "book_id"))
-    @Column(name = "image_urls", nullable = false)
+    @Column(name = "image_url", nullable = false)
     private List<String> image_urls = new ArrayList<>();
 
-    @NotBlank(message = "Title is mandatory")
+    @NotBlank(message = "title is mandatory")
     @Column(nullable = false)
     private String title;
 
-    @NotBlank(message = "Description is mandatory")
     @Column()
     private String description;
+
+    @OneToMany(mappedBy = "book")
+    private List<BookInstance> bookInstances = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "publisher_id")
+    private Publisher publisher;
 
     public long getId() {
         return id;
@@ -40,12 +46,12 @@ public class Book extends SoftDeletable {
         this.id = id;
     }
 
-    public String getInternational_standard_book_number() {
-        return international_standard_book_number;
+    public String getIsbn() {
+        return isbn;
     }
 
-    public void setInternational_standard_book_number(String international_standard_book_number) {
-        this.international_standard_book_number = international_standard_book_number;
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
     }
 
     public List<String> getImage_urls() {
@@ -70,5 +76,21 @@ public class Book extends SoftDeletable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public List<BookInstance> getBookInstances() {
+        return bookInstances;
+    }
+
+    public void setBookInstances(List<BookInstance> bookInstances) {
+        this.bookInstances = bookInstances;
+    }
+
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
     }
 }
