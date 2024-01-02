@@ -2,7 +2,7 @@ package me.phuochungus.Lesen.book;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import me.phuochungus.Lesen.base_class.SoftDeletable;
+import me.phuochungus.Lesen.base.SoftDeletable;
 import me.phuochungus.Lesen.book_instance.BookInstance;
 import me.phuochungus.Lesen.publisher.Publisher;
 

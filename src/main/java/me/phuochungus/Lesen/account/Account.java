@@ -6,7 +6,6 @@ import me.phuochungus.Lesen.user.User;
 
 @Entity
 public class Account {
-
     @Id
     private long id;
 

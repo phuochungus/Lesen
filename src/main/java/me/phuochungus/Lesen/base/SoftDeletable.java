@@ -1,4 +1,4 @@
-package me.phuochungus.Lesen.base_class;
+package me.phuochungus.Lesen.base;
 
 import jakarta.persistence.MappedSuperclass;
 

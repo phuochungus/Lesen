@@ -1,4 +1,4 @@
-package me.phuochungus.Lesen.base_class;
+package me.phuochungus.Lesen.base;
 
 public enum Gender {
     MALE,

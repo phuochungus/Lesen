@@ -2,7 +2,7 @@ package me.phuochungus.Lesen.admin;
 
 import jakarta.persistence.*;
 import me.phuochungus.Lesen.account.Account;
-import me.phuochungus.Lesen.base_class.Profile;
+import me.phuochungus.Lesen.base.Profile;
 
 @Entity
 public class Admin {

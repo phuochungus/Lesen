@@ -2,7 +2,7 @@ package me.phuochungus.Lesen.user;
 
 import jakarta.persistence.*;
 import me.phuochungus.Lesen.account.Account;
-import me.phuochungus.Lesen.base_class.Profile;
+import me.phuochungus.Lesen.base.Profile;
 import me.phuochungus.Lesen.book_instance.BookInstance;
 
 import java.util.ArrayList;
